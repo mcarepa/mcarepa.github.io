@@ -1,0 +1,304 @@
+.landing-cover {
+  background: darken(#e9e9e9, 20%);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -3;
+
+  .text-section {
+    color: white;
+    position: absolute;
+    bottom: 17.5%;
+
+    .copy, .title {
+      line-height: 1;
+    }
+
+    .copy {
+      font-family: $font-family-serif;
+      margin-top: 6px;
+
+      &:after {
+        background-color: white;
+        margin-left: 0;
+      }
+    }
+
+    .next-event-section {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+
+      .event-title {
+        font-family: $font-family-sans-serif;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 0 auto;
+        line-height: 1;
+      }
+
+      .icon {
+        width: 32px;
+        height: 32px;
+        position: relative;
+
+        i {
+          font-size: 32px;
+        }
+
+        .date-day {
+          font-family: $font-family-sans-serif;
+          font-size: 14px;
+          line-height: 1;
+          position: absolute;
+          top: 14px;
+          left: 0;
+          text-align: center;
+          width: 100%;
+        }
+
+        .date-month {
+          font-family: $font-family-sans-serif;
+          font-size: 12px;
+          position: absolute;
+          text-align: center;
+          bottom: -22px;
+          left: 0;
+          width: 100%;
+        }
+      }
+
+      .text {
+        padding-left: 10px;
+        width: calc(100% - 32px);
+
+        .event-label {
+          line-height: 1;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+.landing-main {
+  background-color: #fff8f9;
+  position: relative;
+}
+
+.farm-section {
+  .title {
+    margin-bottom: 29px;
+  }
+}
+
+.common-spaces-section {
+  .title {
+    margin-bottom: 55px;
+  }
+
+  i {
+    display: inline-block;
+    font-size: 45px;
+    margin-bottom: 25px;
+  }
+
+  .common-spaces-images {
+    height: 318px;
+    overflow: hidden;
+
+    .row, .col-xs-6 {
+      height: 100%;
+    }
+  }
+}
+
+.rooms-section {
+  .title {
+    margin-bottom: 55px;
+  }
+
+  i {
+    display: inline-block;
+    font-size: 25px;
+    margin-bottom: 22px;
+  }
+
+  .room-features-row {
+    & + .room-features-row {
+      margin-top: 64px;
+    }
+
+    .row-feature-text {
+      font-size: $font-size-large;
+    }
+
+    .row-feature-col {
+      &:first-child {
+        text-align: left;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+
+      .row-feature-col-inner {
+        display: inline-block;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.activities-section {
+  i {
+    display: inline-block;
+    font-size: 45px;
+    margin-bottom: 22px;
+  }
+
+  .activities-row {
+    & + .activities-row {
+      margin-top: 58px;
+    }
+  }
+}
+
+.plus-scroll-btn {
+  font-family: $font-family-sans-serif;
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 50%;
+  line-height: 42px;
+  transform: translate(-50%, 0);
+  width: 90px;
+  height: 32px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 45px 32px 45px;
+    border-color: transparent transparent $farm-color transparent;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: $screen-xs-max) {
+  .landing-cover {    
+    .text-section {
+      text-align: center;
+      padding: 0 20px;
+      bottom: 90px;
+      left: 0;
+
+     .copy {
+      font-size: 15px;
+      line-height: 19px;
+      margin-top: 4px;
+
+      &:after {
+        margin-left: auto;
+      }
+     }
+
+      .title {
+        font-size: 26px;
+        line-height: 32px;
+      }
+
+      .next-event-section {
+        display: block;
+        font-size: 12px;
+
+        .event-title {
+          width: 80%;
+        }
+
+        .icon {
+          margin-bottom: 28px;
+        }
+
+        .icon, .text {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    .full-cta-btn {
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .common-spaces-section {
+    .common-spaces-images {
+      height: 140px;
+    }
+
+    .common-spaces-col {
+      & + .common-spaces-col {
+        margin-top: 40px;
+      }
+    }
+
+    .title {
+      margin-bottom: 45px;
+    }
+  }
+
+  .landing-main {
+    .activities-section {
+      i {
+        margin-bottom: 16px;
+        margin-top: 35px;
+      }
+
+      .activities-row {
+        margin-top: -30px;
+
+        & + .activities-row {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .rooms-section {
+    .room-features-row + .room-features-row {
+      margin-top: 45px;
+    }
+
+    .row-feature-col {
+      .row-feature-text {
+        font-size: 14px;
+      }
+    }
+
+    .title {
+      margin-bottom: 45px;
+    }
+
+    i {
+      margin-bottom: 12px;
+    }
+  }
+
+  .farm-section {
+    .title {
+      padding: 0 24px;
+    }
+  }
+}

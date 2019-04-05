@@ -1,0 +1,268 @@
+$logo-width: 170px;
+$cta-width: 200px;
+$navbar-fixed-height: 90px;
+
+.navbar {
+  color: $text-color;
+  border: none;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+
+  &.navbar-fixed {
+    background-color: rgba(white, 0.97);
+    border-bottom: 2px solid white;
+    display: block;
+    position: fixed;
+    height: $navbar-fixed-height;
+    z-index: 10;
+    top: -$navbar-fixed-height;
+
+    .navbar-logo {
+      background-color: transparent!important;
+      line-height: 1;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      height: auto;
+
+      .icon.icon-logo {
+        font-size: 38px;
+      }
+    }
+
+    .navbar-nav {
+      margin-top: 42px;
+
+      ul {
+        li {
+          line-height: 1;
+
+          a {
+            color: $text-color;
+            vertical-align: top;
+
+            &:after {
+              background-color: $text-color;
+            }
+
+            &.hvr-underline-from-center:hover:before {
+              background: $text-color;
+            }
+          }
+        }
+      }
+    }
+
+    .navbar-cta {
+      top: 25px;
+    }
+  }
+
+  .navbar-logo {
+    background-color: $farm-color;
+    float: left;
+    margin-left: 5%;
+    margin-right: 5.7%;
+    padding: 40px 23px 23px;
+    text-align: center;
+    width: $logo-width;
+
+    .icon.icon-logo {
+      color: white;
+      font-size: 44px;
+    }
+
+    .logo-lettering {
+      margin-top: 13px;
+      width: 100%;
+    }
+  }
+
+  .navbar-nav {
+    float: left;
+    margin-top: 52px;
+    width: calc(100% - #{$logo-width + 74px + 82px + $cta-width});
+
+    ul {
+      @extend .clearfix;
+      margin-bottom: 0;
+
+      li {
+        float: left;
+        line-height: 1;
+
+        & + li {
+          margin-left: 9%;
+        }
+
+        a {
+          font-size: 12px;
+          line-height: 1;
+          vertical-align: top;
+
+          &:after {
+            left: 50%!important;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-cta {
+    position: absolute;
+    right: 0;
+    top: 34px;
+    float: right;
+    width: $cta-width;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+.navbar.navbar-mobile {
+  background-color: rgba(white, 0.98);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  height: 65px;
+  border-bottom: 2px solid white;
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    background-color: transparent!important;
+    padding: 0;
+    margin: 14px 20px;
+    width: auto;
+
+    .icon.icon-logo {
+      font-size: 36px;
+      color: $farm-color;
+    }
+
+    .logo-lettering {
+      display: inline-block;
+      margin-left: 15px;
+      margin-top: 0;
+      height: 25px;
+      max-width: 107px;
+      width: auto;
+    }
+  }
+
+  .navbar-toggle {
+    background-color: $farm-color;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    text-align: center;
+    width: 65px;
+    height: 100%;
+    transition: background-color 0.2s ease-in;
+
+    &:not(.collapsed) {
+      background-color: #fff5f6;
+    }
+
+    .icon-bar {
+      background-color: white;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .navbar-collapse {
+    background-color: #fff5f6;
+    border-bottom: 2px solid $farm-color;
+    border-top: none;
+    margin-top: 62px;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .navbar-nav {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+
+    ul {
+      text-align: center;
+
+      li {
+        display: block;
+        padding: 0;
+        width: 100%;
+
+        a {
+          display: block;
+          text-align: center;
+          color: #7c7c7c;
+          font-size: 13px;
+          padding: 25px 10px;
+          vertical-align: middle;
+          width: 100%;
+        }
+
+        & + li {
+          border-top: 1px solid rgba($text-color, 0.05);
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+  .navbar {
+    .navbar-logo {
+      margin-left: 25px;
+      margin-right: 45px;
+    }
+
+    .navbar-nav {
+      width: calc(100% - 270px);
+
+      ul li {
+        & + li {
+          margin-left: 30px;
+        }
+      }
+    }
+
+    .navbar-cta {
+      width: 90px;
+
+
+      .btn {
+        min-width: auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $screen-md) and (max-width: $screen-lg) {
+  .navbar {
+    .navbar-logo {
+      margin-left: 3.5%;
+      margin-right: 4%;
+    }
+
+    .navbar-nav {
+      width: calc(100% - 500px);
+
+      ul li {
+        & + li {
+          margin-left: 35px;
+        }
+      }
+    }
+  }
+}
